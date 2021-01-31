@@ -85,7 +85,7 @@ namespace ValueTypeTest {
 using System; 
 namespace ValueTypeTest { 
       
-class GeeksforGeeks { 
+class DemoTMT { 
       
     // Main Function 
     static void Main()  

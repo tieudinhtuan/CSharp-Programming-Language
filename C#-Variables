@@ -1,0 +1,48 @@
+// Compile Time Initialization 
+using System; 
+class DemoTMT { 
+      
+        // only declaration, compiler will  
+        // provide the default value 0 to it 
+        int y; 
+      
+    // Main Method 
+    public static void Main(String []args) 
+    { 
+          
+        // Compile Time Initialization of variable 'x' 
+        // Assigning value 22 to x 
+        int x = 22;     
+          
+        // printing the value 
+        Console.WriteLine("Value of x is "+x); 
+          
+        // creating object to access 
+        // the variable y 
+        DemoTMT d = new DemoTMT();  
+          
+        // printing the value 
+        Console.WriteLine("Value of y is "+d.y); 
+    } 
+} 
+
+
+
+// Run Time Initialization 
+using System; 
+class DemoTMT { 
+      
+    // Main Method 
+    public static void Main(String []args) 
+    { 
+          
+        // Value will be taken from user  
+        // input and assigned to variable 
+        // num 
+        int num = Convert.ToInt32(Console.ReadLine()); 
+  
+        // printing the result 
+        Console.WriteLine("Value of num is " + num); 
+  
+    } 
+}

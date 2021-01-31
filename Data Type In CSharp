@@ -56,3 +56,57 @@ class DemoTMT {
     } 
 } 
 } 
+
+
+//Boolean
+// C# program to demonstrate the 
+// boolean data type 
+using System; 
+namespace ValueTypeTest { 
+      
+    class DemoTMT { 
+          
+    // Main function 
+    static void Main()  
+    { 
+          
+        // boolean data type 
+        bool b = true;      
+        if (b == true) 
+            Console.WriteLine("Hi TMT"); 
+    }  
+} 
+}
+
+
+
+
+//Reference Data Types
+using System; 
+namespace ValueTypeTest { 
+      
+class GeeksforGeeks { 
+      
+    // Main Function 
+    static void Main()  
+    { 
+          
+        // declaring string 
+        string a = "TMT";  
+          
+        //append in a 
+        a+="for"; 
+        a = a+"TMT";  
+        Console.WriteLine(a); 
+          
+        // declare object obj 
+        object obj; 
+        obj = 22; 
+        Console.WriteLine(obj); 
+          
+        // to show type of object 
+        // using GetType() 
+        Console.WriteLine(obj.GetType());  
+    }  
+} 
+}

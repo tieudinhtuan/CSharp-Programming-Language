@@ -110,3 +110,62 @@ class DemoTMT {
     }  
 } 
 }
+
+
+// Pointer Data Type
+//note: Click R Project/Properties/Build allow unsafe code
+namespace PointerProgram
+{
+    // class declaration
+    class Program
+    {
+        // Main Method
+        static void Main(string[] args)
+        {
+            unsafe
+            {
+                int n = 10;
+                int* p = &n;
+                Console.WriteLine("Du lieu: " + n);
+                Console.WriteLine("Du lieu: " + p->ToString());
+                Console.WriteLine("Dia chi: " + (int)p);
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
+
+//Program swap
+using System;
+
+namespace PointerProgram
+{
+    class DemoTMT
+    {
+        public unsafe void swap(int* p, int* q)
+        {
+            int temp = *p;
+            *p = *q;
+            *q = temp;
+        }
+
+        public unsafe static void Main()
+        {
+            Console.WriteLine("Unsafe code trong C#");
+            Console.WriteLine("Truyen con tro nhu la tham so");
+            Console.WriteLine("-----------------------------------");
+            DemoTMT p = new DemoTMT();
+            int var1 = 29;
+            int var2 = 22;
+            int* x = &var1;
+            int* y = &var2;
+
+            Console.WriteLine("Truoc khi trao doi: var1 = {0}, var2 = {1}", var1, var2);
+            p.swap(x, y);
+
+            Console.WriteLine("Sau khi trao doi: var1 = {0}, var2 = {1}", var1, var2);
+            Console.ReadKey();
+        }
+    }
+}

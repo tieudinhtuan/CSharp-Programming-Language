@@ -1,0 +1,21 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		int dec=22;
+		int mod;
+		int binary=0;
+		int i=1;
+		do
+		{
+			mod=dec%2;
+			binary=binary + (i*mod);
+			dec=dec/2;
+			i=i*10;
+		}
+		while (dec>0);
+		Console.Write(binary);
+	}
+}

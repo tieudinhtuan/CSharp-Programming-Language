@@ -1,0 +1,76 @@
+// C# program to illustrate if statement 
+using System; 
+  
+public class DemoTMT { 
+  
+    public static void Main(string[] args) 
+    { 
+        string name = "TMT"; 
+        if (name == "TMT") { 
+            Console.WriteLine("Hello TMT"); 
+        } 
+    } 
+} 
+
+// C# program to illustrate  
+// if-else statement 
+using System; 
+  
+public class DemoTMT { 
+  
+    public static void Main(string[] args) 
+    { 
+        string name = "TMT"; 
+        if (name == "TMT") { 
+            Console.WriteLine("Hello TMT"); 
+        } 
+        else { 
+            Console.WriteLine("Hello everybody.!"); 
+        } 
+    } 
+} 
+
+// C# program to illustrate 
+// if-else-if ladder 
+using System; 
+  
+class DemoTMT { 
+  
+    public static void Main(String[] args) 
+    { 
+        int i = 22; 
+  
+        if (i == 12) 
+            Console.WriteLine("i is 12"); 
+        else if (i == 29) 
+            Console.WriteLine("i is 29"); 
+        else if (i == 22) 
+            Console.WriteLine("i is 22"); 
+        else
+            Console.WriteLine("i is not present"); 
+    } 
+} 
+
+
+// C# program to illustrate 
+// nested-if statement 
+using System; 
+  
+class DemoTMT { 
+  
+    public static void Main(String[] args) 
+    { 
+        int i = 22; 
+  
+        if (i == 22) { 
+  
+            // Nested - if statement 
+            // Will only be executed if statement 
+            // above it is true 
+            if (i < 12) 
+                Console.WriteLine("i is smaller than 12 too"); 
+            else
+                Console.WriteLine("i is greater than 20"); 
+        } 
+    } 
+} 

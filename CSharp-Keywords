@@ -1,0 +1,132 @@
+// C# Program to illustrate the keywords 
+using System; 
+  
+class DemoTMT { 
+  
+    // Here static, public, void  
+    // are keywords     
+    static public void Main () { 
+          
+        // here int is keyword 
+        // a is identifier 
+        int a = 22; 
+          
+        Console.WriteLine("The value of a is: {0}",a); 
+          
+        // this is not a valid identifier 
+  
+        // removing comment will give compile time error 
+        // double int = 22; 
+    } 
+} 
+
+
+
+// C# Program to illustrate the 
+// modifiers keywords 
+using System; 
+  
+class DemoTMT { 
+  
+    class Mod 
+    { 
+          
+        // using public modifier 
+        // keyword 
+        public int n1; 
+  
+    } 
+  
+    // Main Method 
+    static void Main(string[] args) { 
+  
+        Mod obj1 = new Mod(); 
+  
+        // access to public members 
+        obj1.n1 = 22; 
+  
+        Console.WriteLine("Value of n1: {0}", obj1.n1); 
+  
+    } 
+} 
+
+
+// C# Program to illustrate the use of  
+// prefixing @ in keywords 
+using System; 
+  
+class DemoTMT { 
+  
+    // Here static, public, void  
+    // are keywords     
+    static public void Main () { 
+          
+        // here int is keyword 
+        // a is identifier 
+        int a = 22; 
+          
+        Console.WriteLine("The value of a is: {0}",a); 
+          
+        // prefix @ in keyword int which  
+        // makes it a valid identifier 
+        int @int = 12; 
+          
+        Console.WriteLine("The value of a is: {0}",@int); 
+         
+    } 
+} 
+
+
+
+
+// C# program to illustrate contextual keywords 
+using System;  
+  
+public class Student {  
+  
+    // Declare name field  
+    private string name = "Hello TMT";  
+  
+    // Declare name property  
+    public string Name  
+    {  
+  
+    // get is contextual keyword 
+    get
+        {  
+            return name;  
+        }  
+          
+        // set is a contextual 
+        // keyword 
+        set
+        {  
+            name = value;  
+        }  
+    }  
+}  
+  
+class TestStudent {  
+  
+    // Main Method  
+    public static void Main(string[] args)  
+    {  
+        Student s = new Student();  
+  
+        // calls set accessor of the property Name,  
+        // and pass "TMT" as value of the  
+        // standard field 'value'.  
+        s.Name = "TMT";  
+  
+        // displays TMT, Calls the get accessor  
+        // of the property Name.  
+        Console.WriteLine("Name: " + s.Name);  
+          
+        // using get and set as identifier 
+        int get = 50; 
+        int set = 70; 
+          
+        Console.WriteLine("Value of get is: {0}",get); 
+        Console.WriteLine("Value of set is: {0}",set); 
+    }  
+}  

@@ -54,3 +54,137 @@ public class DemoTMT
   
     } 
 } 
+
+
+
+
+// C# program to illustrate 
+// if-else statement 
+using System; 
+  
+class DemoTMT { 
+  
+    // Main Method 
+    public static void Main(String[] args) 
+    { 
+        // taking two strings value 
+        string topic; 
+        string category; 
+  
+        // taking topic name 
+        topic = "Inheritance"; 
+  
+        // using compare function of string class 
+        if ((String.Compare(topic, "Introduction to C#") == 0) ||  
+            (String.Compare(topic, "Variables") == 0) ||  
+            (String.Compare(topic, "Data Types") == 0)) 
+        { 
+            category = "Basic"; 
+        } 
+          
+        // using compare function of string class 
+        else if ((String.Compare(topic, "Loops") == 0) ||  
+                 (String.Compare(topic, "If Statements") == 0) ||  
+                 (String.Compare(topic, "Jump Statements") == 0))  
+        { 
+            category = "Control Flow"; 
+        } 
+              
+        // using compare function of string class 
+        else if ((String.Compare(topic, "Class & Object") == 0) ||  
+                 (String.Compare(topic, "Inheritance") == 0) ||  
+                 (String.Compare(topic, "Constructors") == 0))  
+        { 
+            category = "OOPS Concept"; 
+        } 
+          
+        else 
+        { 
+            category = "Not Mentioned"; 
+        } 
+  
+        System.Console.Write("Category is " + category); 
+    } 
+} 
+
+
+// C# program to illustrate 
+// switch statement 
+using System; 
+  
+class DemoTMT { 
+  
+    // Main Method 
+    public static void Main(String[] args) 
+    { 
+        // taking two strings value 
+        string topic; 
+        string category; 
+  
+        // taking topic name 
+        topic = "Inheritance"; 
+          
+        // using switch Statement 
+        switch(topic) 
+        { 
+            case "Introduction to C#": 
+            case "Variables": 
+            case  "Data Types": 
+                   
+                category = "Basic"; 
+                break; 
+                  
+             case "Loops": 
+             case"If Statements": 
+             case"Jump Statements": 
+                   
+                category = "Control Flow"; 
+                break; 
+                  
+             case "Class & Object": 
+             case "Inheritance": 
+             case "Constructors": 
+                   
+                category = "OOPS Concept"; 
+                break; 
+                  
+             // default case  
+             default: 
+                category = "Not Mentioned"; 
+                break; 
+                  
+        } 
+          
+        System.Console.Write("Category is " + category); 
+    } 
+} 
+
+
+
+// C# program to illustrate the 
+// use of goto in switch statement 
+using System; 
+  
+public class DemoTMT { 
+  
+// Main Method 
+public static void Main(String[] args) 
+    { 
+        int greeting = 2; 
+  
+        switch (greeting) { 
+        case 1: 
+            Console.WriteLine("Hello"); 
+            goto default; 
+        case 2: 
+            Console.WriteLine("Course"); 
+            goto case 3; 
+        case 3: 
+            Console.WriteLine("ASP.NET"); 
+            goto default;
+        default: 
+            Console.WriteLine("Entered value is: " + greeting); 
+            break; 
+        } 
+    } 
+} 

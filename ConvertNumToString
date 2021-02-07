@@ -1,4 +1,4 @@
- public string ConvertNumToString1(decimal number)
+ public string ConvertNumToString(decimal number)
         {
             string s = number.ToString("#");
             string[] so = new string[] { "không", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín" };

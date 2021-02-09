@@ -1,0 +1,241 @@
+//example constructor
+class DemoTMT
+{   
+  .......
+  // Constructor
+  public DemoTMT() {}
+  .......
+}
+
+// an object is created of Geek class,
+// So above constructor is called
+DemoTMT obj = new DemoTMT(); 
+
+
+
+// C# Program to illustrate calling
+// a Default constructor
+using System;
+namespace DefaultConstructorExample {
+ 
+class DemoTMT {
+ 
+    int num;
+    string name;
+ 
+    // this would be invoked while the
+    // object of that class created.
+    DemoTMT()
+    {
+        Console.WriteLine("Constructor Called");
+    }
+ 
+    // Main Method
+    public static void Main()
+    {
+ 
+        // this would invoke default
+        // constructor.
+        DemoTMT tmt = new DemoTMT();
+ 
+        // Default constructor provides
+        // the default values to the
+        // int and object as 0, null
+        // Note:
+        // It Give Warning because
+        // Fields are not assign
+        Console.WriteLine(tmt.name);
+        Console.WriteLine(tmt.num);
+    }
+}
+}
+
+
+
+
+// C# Program to illustrate calling of
+// parameterized constructor.
+using System;
+namespace ParameterizedConstructorExample {
+ 
+class DemoTMT {
+ 
+    // data members of the class.
+    String name;
+    int id;
+ 
+    // parameterized constructor would
+    // initialized data members with
+    // the values of passed arguments
+    // while object of that class created.
+    DemoTMT(String name, int id)
+    {
+        this.name = name;
+        this.id = id;
+    }
+ 
+    // Main Method
+    public static void Main()
+    {
+ 
+        // This will invoke parameterized
+        // constructor.
+        DemoTMT tmt = new DemoTMT("C# Language", 1);
+        Console.WriteLine("Name = " + tmt.name +
+                         " and Id = " + tmt.id);
+    }
+}
+}
+
+
+// C# Program to illustrate calling
+// a Copy constructor
+using System;
+namespace copyConstructorExample {
+ 
+class DemoTMT {
+ 
+    private string month;
+    private int year;
+ 
+    // declaring Copy constructor
+    public DemoTMT(DemoTMT s)
+    {
+        month = s.month;
+        year = s.year;
+    }
+ 
+    // Instance constructor
+    public DemoTMT(string month, int year)
+    {
+        this.month = month;
+        this.year = year;
+    }
+ 
+    // Get details of DemoTMT
+    public string Details
+    {
+        get
+        {
+            return "Month: " + month.ToString() + 
+                     "\nYear: " + year.ToString();
+        }
+    }
+ 
+    // Main Method
+    public static void Main()
+    {
+ 
+        // Create a new DemoTMT object.
+        DemoTMT g1 = new DemoTMT("Dec", 1994);
+ 
+        // here is g1 details is copied to g2.
+        DemoTMT g2 = new DemoTMT(g1);
+ 
+        Console.WriteLine(g2.Details);
+    }
+}
+}
+
+
+
+// C# Program to illustrate calling
+// a Private constructor
+using System;
+namespace privateConstructorExample {
+ 
+public class DemoTMT {
+ 
+    // declare private Constructor
+    private DemoTMT()
+    {
+    }
+ 
+    // declare static variable field
+    public static int count_tmt;
+ 
+    // declare static method
+    public static int tmt_Count()
+    {
+        return ++count_tmt;
+    }
+ 
+    // Main Method
+    public static void Main()
+    {
+ 
+        // If you uncomment the following
+        // statement, it will generate
+        // an error because the constructor
+        // is unaccessible:
+        // DemoTMT s = new DemoTMT(); // Error
+ 
+        DemoTMT.count_tmt = 99;
+ 
+        // Accessing without any
+        // instance of the class
+        DemoTMT.tmt_Count();
+ 
+        Console.WriteLine(DemoTMT.count_tmt);
+ 
+        // Accessing without any
+        // instance of the class
+        DemoTMT.tmt_Count();
+ 
+        Console.WriteLine(DemoTMT.count_tmt);
+    }
+}
+}
+
+
+
+
+// C# Program to illustrate calling
+// a Static constructor
+using System;
+namespace staticConstructorExample {
+ 
+class DemoTMT {
+ 
+    // It is invoked before the first
+    // instance constructor is run.
+    static DemoTMT()
+    {
+ 
+        // The following statement produces
+        // the first line of output,
+        // and the line occurs only once.
+        Console.WriteLine("Static Constructor");
+    }
+ 
+    // Instance constructor.
+    public DemoTMT(int i)
+    {
+        Console.WriteLine("Instance Constructor " + i);
+    }
+ 
+    // Instance method.
+    public string tmt_detail(string name, int id)
+    {
+        return "Name:" + name + " id:" + id;
+    }
+ 
+    // Main Method
+    public static void Main()
+    {
+ 
+        // Here Both Static and instance
+        // constructors are invoked for
+        // first instance
+        DemoTMT obj = new DemoTMT(1);
+ 
+        Console.WriteLine(obj.tmt_detail("C# Language", 1));
+ 
+        // Here only instance constructor
+        // will be invoked
+        DemoTMT obj1 = new DemoTMT(2);
+ 
+        Console.WriteLine(obj1.tmt_detail("C# of C#", 2));
+    }
+}
+}

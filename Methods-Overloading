@@ -1,0 +1,113 @@
+// C# program to demonstrate the function  
+// overloading by changing the Data types 
+//  of the parameters  
+using System; 
+class DemoTMT { 
+  
+    // adding three integer values. 
+    public int Add(int a, int b, int c) 
+    { 
+        int sum = a + b + c; 
+        return sum; 
+    } 
+  
+    // adding three double values. 
+    public double Add(double a, 
+                      double b, double c) 
+    { 
+        double sum = a + b + c; 
+        return sum; 
+    } 
+  
+    // Main Method 
+    public static void Main(String[] args) 
+    { 
+  
+        // Creating Object 
+        DemoTMT ob = new DemoTMT(); 
+  
+        int sum2 = ob.Add(1, 2, 3); 
+        Console.WriteLine("sum of the three "
+                          + "integer value : " + sum2); 
+        double sum3 = ob.Add(1.0, 2.0, 3.0); 
+        Console.WriteLine("sum of the three "
+                          + "double value : " + sum3); 
+    } 
+} 
+
+
+
+// C# program to demonstrate the function  
+// overloading by changing the  
+// Order of the parameters 
+using System; 
+class DemoTMT { 
+  
+    // Method 
+    public void Identity(String name, int id) 
+    { 
+  
+        Console.WriteLine("Name : " + name + ", "
+                          + "Id : " + id); 
+    } 
+      
+    // Method 
+    public void Identity(int id, String name) 
+    { 
+  
+        Console.WriteLine("Name : " + name + ", "
+                          + "Id : " + id); 
+    } 
+  
+    // Main Method 
+    public static void Main(String[] args) 
+    { 
+  
+        // Creating Object 
+        DemoTMT obj = new DemoTMT(); 
+  
+        obj.Identity("TMT", 1); 
+        obj.Identity("HA", 2); 
+    } 
+} 
+
+
+
+// C# program to show error when method signature 
+// is the same and the return type is different. 
+using System; 
+class DemoTMT { 
+  
+    // adding two integer value. 
+    public int Add(int a, int b) 
+    { 
+  
+        int sum = a + b; 
+        return sum; 
+    } 
+  
+    // adding three integer value. 
+    public double Add(int a, int b) 
+    { 
+        double sum = a + b + 0.0; 
+        return sum; 
+    } 
+  
+    // Main Method 
+    public static void Main(String[] args) 
+    { 
+  
+        // Creating Object 
+        DemoTMT ob = new DemoTMT(); 
+  
+        int sum1 = ob.Add(1, 2); 
+        Console.WriteLine("sum of the two "
+                          + "integer value :" + sum1); 
+  
+        int sum2 = ob.Add(1, 2); 
+        Console.WriteLine("sum of the three "
+                          + "integer value :" + sum2); 
+    } 
+} 
+ error CS0111: A member `DemoTMT.Add(int, int)’ is already defined. Rename this member or use different parameter types
+(Location of the symbol related to previous error)

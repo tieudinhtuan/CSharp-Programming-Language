@@ -1,0 +1,205 @@
+// C# program to illustrate the  
+// concept of the named parameters 
+using System; 
+  
+public class DemoTMT { 
+  
+    // addstr contain three parameters 
+    public static void addstr(string s1, string s2, string s3) 
+    { 
+        string result = s1 + s2 + s3; 
+        Console.WriteLine("Final string is: " + result); 
+    } 
+  
+    // Main Method 
+    static public void Main() 
+    { 
+        // calling the static method with named  
+        // parameters without any order 
+        addstr(s1: "Name", s2: "for", s3: "TMT"); 
+                     
+    } 
+} 
+
+
+// C# program to illustrate the 
+// concept of ref parameter 
+using System; 
+  
+class DemoTMT { 
+  
+    // Main Method 
+    public static void Main() 
+    { 
+  
+        // Assigning value 
+        string val = "Dog"; 
+  
+        // Pass as a reference parameter 
+        CompareValue(ref val); 
+  
+        // Display the given value 
+        Console.WriteLine(val); 
+    } 
+  
+    static void CompareValue(ref string val1) 
+    { 
+        // Compare the value 
+        if (val1 == "Dog")  
+        { 
+            Console.WriteLine("Matched!"); 
+        } 
+  
+        // Assigning new value 
+        val1 = "Cat"; 
+    } 
+} 
+
+
+// C# program to illustrate the 
+// concept of out parameter 
+using System; 
+  
+class DemoTMT { 
+  
+    // Main method 
+    static public void Main() 
+    { 
+  
+        // Creating variable 
+        // without assigning value 
+        int num; 
+  
+        // Pass variable num to the method 
+        // using out keyword 
+        AddNum(out num); 
+  
+        // Display the value of num 
+        Console.WriteLine("The sum of"
+          + " the value is: {0}",num); 
+                            
+    } 
+  
+    // Method in which out parameter is passed 
+    // and this method returns the value of 
+    // the passed parameter 
+    public static void AddNum(out int num) 
+    { 
+        num = 40; 
+        num += num; 
+    } 
+} 
+
+
+// C# program to illustrate the  
+// concept of optional parameters  
+using System;  
+    
+class DemoTMT {  
+    
+    // This method contains two regular  
+    // parameters, i.e. ename and eid 
+    // And two optional parameters, i.e.  
+    // bgrp and dept  
+    static public void detail(string ename,   
+                               int eid,  
+                               string bgrp = "A+",  
+                    string dept = "Review-Team")  
+    
+    {  
+        Console.WriteLine("Employee name: {0}", ename);  
+        Console.WriteLine("Employee ID: {0}", eid);  
+        Console.WriteLine("Blood Group: {0}", bgrp);  
+        Console.WriteLine("Department: {0}", dept);  
+    }  
+    
+    // Main Method  
+    static public void Main()  
+    {  
+    
+        // Calling the detail method  
+        detail("XYZ", 123);  
+        detail("ABC", 456, "B-");  
+        detail("DEF", 789, "B+",  
+           "Software Developer");  
+    }  
+}  
+
+
+// C# program to illustrate the concept  
+// of the dynamic parameters 
+using System; 
+  
+class DemoTMT { 
+  
+    // Method which contains dynamic parameter 
+    public static void mulval(dynamic val) 
+    { 
+        val *= val; 
+        Console.WriteLine(val); 
+    } 
+  
+    // Main method 
+    static public void Main() 
+    { 
+  
+        // Calling mulval method 
+        mulval(22); 
+    } 
+} 
+
+
+// C# program to illustrate value parameters 
+using System; 
+  
+public class DemoTMT { 
+  
+    // Main Method 
+    static public void Main() 
+    { 
+  
+        // The value of the parameter 
+        // is already assigned 
+        string str1 = "TMT"; 
+        string str2 = "HA"; 
+        string res = addstr(str1, str2); 
+        Console.WriteLine(res); 
+    } 
+  
+    public static string addstr(string s1, string s2) 
+    { 
+        return s1 + s2; 
+    } 
+} 
+
+
+// C# program to illustrate params 
+using System; 
+namespace Examples { 
+  
+class DemoTMT { 
+  
+    // function containing params parameters 
+    public static int mulval(params int[] num) 
+    { 
+        int res = 1; 
+  
+        // foreach loop 
+        foreach(int j in num) 
+        { 
+            res *= j; 
+        } 
+        return res; 
+    } 
+  
+    static void Main(string[] args) 
+    { 
+  
+        // Calling mulval method 
+        int x = mulval(22, 12, 29, 09, 94); 
+  
+        // show result 
+        Console.WriteLine(x); 
+    } 
+} 
+} 

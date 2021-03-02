@@ -1,0 +1,329 @@
+// C# program to demonstrate the method overriding 
+// without using 'virtual' and 'override' modifiers
+using System;
+ 
+// base class name 'baseClass'
+class baseClass
+ 
+{
+    public void show()
+    {
+        Console.WriteLine("Base class");
+    }
+}
+ 
+// derived class name 'derived'
+// 'baseClass' inherit here
+class derived : baseClass
+{
+     
+    // overriding
+    new public void show() 
+    {
+        Console.WriteLine("Derived class");
+    }
+}
+  
+class DemoTMT {
+     
+    // Main Method
+    public static void Main()
+    {
+         
+        // 'obj' is the object of
+        // class 'baseClass'
+        baseClass obj = new baseClass();
+        
+        
+        // invokes the method 'show()'
+        // of class 'baseClass'
+        obj.show();
+         
+        obj = new derived();
+         
+        // it also invokes the method 
+        // 'show()' of class 'baseClass'
+        obj.show();
+         
+    }
+}
+
+//Explanation: In this program, the object obj invokes class baseClass two times and call the method show() of class baseClass. To avoid this problem we use virtual and override keyword.
+
+
+
+/ C# program to illustrate the use of 
+//'virtual' and 'override' modifiers
+using System;
+ 
+class baseClass {
+ 
+    // show() is 'virtual' here
+    public virtual void show()
+    {
+        Console.WriteLine("Base class");
+    }
+}
+ 
+ 
+// class 'baseClass' inherit 
+// class 'derived'
+class derived : baseClass
+{
+     
+    //'show()' is 'override' here
+    public override void show()
+    {
+        Console.WriteLine("Derived class");
+    }
+}
+ 
+class DemoTMT {
+     
+    // Main Method
+    public static void Main()
+    {
+         
+        baseClass obj;
+ 
+        // 'obj' is the object
+        // of class 'baseClass'
+        obj = new baseClass();
+         
+        // it invokes 'show()' 
+        // of class 'baseClass'
+        obj.show();
+         
+ 
+        // the same object 'obj' is now
+        // the object of class 'derived'
+        obj = new derived();
+         
+        // it invokes 'show()' of class 'derived'
+        // 'show()' of class 'derived' is overridden
+        // for 'override' modifier
+        obj.show();
+         
+    }
+}
+
+
+//Example 1:
+
+// C# program to show the use of 'base' 
+// keyword in method overriding
+using System;
+ 
+// base class
+public class web {
+     
+     
+    string name = "C# language";
+ 
+    // 'showdata()' is member method,
+    // declare as virtual
+    public virtual void showdata()
+    {
+        Console.WriteLine("Website Name: " + name);
+    }
+}
+ 
+// derived class
+// class 'web' is inherits
+// class 'stream'
+class stream : web {
+     
+     
+    string s = "Computer Science";
+     
+    //'showdata()' is overridden
+    // in derived class
+    public override void showdata()
+    {
+         
+        // Calling 'showdata()' of base
+        // class using 'base' keyword
+        base.showdata();
+         
+        Console.WriteLine("About: " + s);
+    }
+}
+ 
+class DemoTMT {
+     
+    // Main Method
+    static void Main()
+    {
+         
+        // 'E' is object of class stream
+        // also works as object of 
+        // class 'web'
+        stream E = new stream();
+         
+         
+        // it first invokes 'showdata()'
+        // of class 'web' then it invokes 
+        // 'showdata()' of class 'stream'
+        E.showdata();
+         
+    }
+}
+
+
+
+//Example 2: How base keyword specifies the calling of base-class constructor from derived class when derived class instances are created.
+
+// C# program to show how base keyword 
+// specifies the calling of base-class
+// constructor from the derived class
+// when derived class instances are created
+using System;
+ 
+// base class
+public class clssA {
+     
+    int n1, n2;
+ 
+    // default constructor
+    public clssA()
+    {
+        Console.WriteLine("Default Constructor Invoked");
+    }
+ 
+    // parameterized constructor
+    public clssA(int i, int j)
+    {
+         
+        // consturct values
+        n1 = i;
+        n2 = j;
+        Console.WriteLine("Parameterized Constructor Invoked");
+        Console.WriteLine("Invoked Values are: " + n1 + " and " + n2);
+    }
+}
+ 
+// derived class
+public class DerivedClass : clssA
+{
+     
+    // This constructor will instantiate
+    // 'clssA()' [no argument constructor]
+    // using 'base' keyword
+    public DerivedClass() : base() { }
+ 
+ 
+    // This constructor will instantiate
+    // 'clssA(int i, int j)' [parameterized
+    // constructor] using 'base' keyword
+    public DerivedClass(int i, int j) : base(i, j) { }
+ 
+// Main Method
+static void Main()
+{
+     
+    // invoke no argumanet constructor
+    DerivedClass d1 = new DerivedClass();
+     
+    Console.WriteLine();
+ 
+    // invoke parameterized constructor
+    DerivedClass d2 = new DerivedClass(10, 20);
+     
+}
+}
+
+
+
+//Example 3: It shows how base keyword specifies the base-class constructor called from derived class and also calling of a method using the base keyword from the derived class.
+
+// C# program to show how 'base' keyword specifies
+// the base-class constructor that called from 
+// derived class and also calling a method 'swap' 
+// from derived class using base keyword
+using System;
+ 
+// base class
+public class clssA {
+     
+    public int n1, n2;
+ 
+    // default constructor
+    public clssA()
+    {
+        Console.WriteLine("In clssA 'no argument constructor' invoked");
+    }
+ 
+    // parameterized constructor
+    public clssA(int i, int j)
+    {
+         
+        // consturct values
+        n1 = i;
+        n2 = j;
+        Console.WriteLine("in clssA 'parameterized constructor' invoked");
+        Console.WriteLine("the invoked values are " + n1 + " and " + n2);
+        Console.WriteLine();
+    }
+ 
+    public virtual void swap()
+    {
+        Console.WriteLine("swap function of base class(clssA) invoked");
+        Console.WriteLine("Before swap num1 = {0} and num2 = {1}", n1, n2);
+ 
+        // swapping
+        int t = n1;
+        n1 = n2;
+        n2 = t;
+        Console.WriteLine("After swap num1 = {0} and num2 = {1}", n1, n2);
+    }
+}
+ 
+// derived class
+public class DerivedClass : clssA {
+     
+    // This constructor will instantiate
+    // 'clssA' [no argument constructor]
+    // using 'base' keyword
+    public DerivedClass() : base() { }
+ 
+    // This constructor will instantiate 
+    // 'clssA' [parameterized constructor]
+    // using 'base' keyword
+    public DerivedClass(int i, int j) : base(i, j) { }
+ 
+    public override void swap()
+    {
+         
+        // it access the swap function of
+        // 'clssA' using 'base' keyword
+        base.swap();
+         
+        Console.WriteLine();
+ 
+        Console.WriteLine("Swap function of derived class invoked");
+        Console.WriteLine("Before swap num1 = {0} and num2 = {1}", n1, n2);
+ 
+        // swapping
+        int t = n1;
+        n1 = n2;
+        n2 = t;
+        Console.WriteLine("After swap num1 = {0} and num2 = {1}", n1, n2);
+    }
+ 
+// Main Method
+static void Main()
+{
+     
+    // invoke no argumanet constructor
+    DerivedClass d1 = new DerivedClass();
+     
+    Console.WriteLine();
+ 
+    // invoke parameterized constructor
+    DerivedClass d2 = new DerivedClass(10, 20);
+     
+    // calling swap function
+    d2.swap();
+     
+}
+}

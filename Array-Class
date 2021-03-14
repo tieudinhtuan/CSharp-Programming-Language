@@ -1,0 +1,188 @@
+// C# program to creating an array 
+// of the string as coffee name, store 
+// coffee name in the store, 
+// and prints each value. 
+using System; 
+namespace arrayClass { 
+  
+class DemoTMT { 
+  
+    // Main Method 
+    public static void Main() 
+    { 
+  
+        // declares an 1D Array of string 
+        string[] store; 
+  
+        // allocating memory for coffee names. 
+        store = new string[] {"Americano, ", "Cafe au lait, ",  
+                              "Espresso, ", "Cappuccino, ", 
+                              "Long Black, ", "Macchiato" }; 
+  
+        // Displaying Elements of the array 
+        Console.WriteLine("Different types of coffee: "); 
+        Console.WriteLine(); 
+        foreach(string coffeename in store) 
+            Console.WriteLine(coffeename + " "); 
+    } 
+} 
+} 
+
+
+
+// C# program to illustrate  
+// Length property of Array class 
+using System; 
+namespace arrayClass { 
+  
+class DemoTMT { 
+  
+    // Main Method 
+    public static void Main() 
+    { 
+  
+        // declares an 1D Array of string. 
+        string[] topic; 
+  
+        // allocating memory for topic. 
+        topic = new string[] {"Array, ", "String, ",  
+                              "Stack, ", "Queue, ", 
+                              "Exception, ", "Operators"}; 
+  
+        // Displaying Elements of the array 
+        Console.WriteLine("Topic of C#:"); 
+        Console.WriteLine(); 
+  
+        // Here we calculate and print  
+        // the length of the array, i.e. 6 
+        Console.WriteLine("Length of the array: {0}", 
+                                       topic.Length); 
+        foreach(string ele in topic) 
+            Console.WriteLine(ele + " "); 
+    } 
+} 
+} 
+
+
+
+// C# program to illustrate the 
+// Rank property of Array class 
+using System; 
+namespace arrayClass { 
+  
+class DemoTMT { 
+  
+    // Main Method 
+    public static void Main() 
+    { 
+  
+        // declares an 1D Array of string. 
+        string[] topic; 
+  
+        // allocating memory for topic. 
+        topic = new string[] {"Array, ", "String, ",  
+                              "Stack, ", "Queue, ", 
+                              "Exception, ", "Operators" }; 
+  
+        // Displaying Elements of array 
+        Console.WriteLine("Topic of C#:"); 
+        Console.WriteLine(); 
+  
+        // Rank property provides the dimension rank 
+        // here we use 1-D array so it return 1 
+        // if we use 2-D array then it will return 2 
+        Console.WriteLine("Rank of the array: {0}", 
+                                         topic.Rank); 
+        foreach(string ele in topic) 
+            Console.WriteLine(ele + " "); 
+    } 
+} 
+} 
+
+
+// C# program to illustrate the Reverse() Method 
+using System; 
+namespace arrayClass { 
+  
+class DemoTMT { 
+  
+    // Main Method 
+    public static void Main() 
+    { 
+  
+        // declares an 1D Array of string. 
+        string[] topic; 
+  
+        // allocating memory for topic. 
+        topic = new string[] {"Array, ", "String, ",  
+                              "Stack, ", "Queue, ", 
+                              "Exception, ", "Operators" }; 
+  
+        // Displaying Elements of  
+        // the array before reverse 
+        Console.WriteLine("Topic of C# before reverse:"); 
+        Console.WriteLine(); 
+        foreach(string ele in topic) 
+        { 
+            Console.WriteLine(ele + " "); 
+        } 
+        Console.WriteLine(); 
+  
+        // using Reverse() method to  
+        // reverse the given array 
+        Array.Reverse(topic); 
+  
+        // Displaying Elements of array after reverse 
+        Console.WriteLine("Topic of C# after reverse:"); 
+        Console.WriteLine(); 
+        foreach(string val in topic) 
+        { 
+            Console.WriteLine(val + " "); 
+        } 
+    } 
+} 
+} 
+
+
+// C# program to illustrate the Sort() Method 
+using System; 
+namespace arrayClass { 
+  
+class DemoTMT { 
+  
+    // Main Method 
+    public static void Main() 
+    { 
+  
+        // declares an 1D Array of string. 
+        string[] topic; 
+  
+        // allocating memory for topic. 
+        topic = new string[] {"Array, ", "String, ",  
+                              "Stack, ", "Queue, ", 
+                              "Exception, ", "Operators" }; 
+  
+        // Displaying Elements of the array before sort 
+        Console.WriteLine("Topic of C# before reverse:"); 
+        Console.WriteLine(); 
+        foreach(string ele in topic) 
+        { 
+            Console.WriteLine(ele + " "); 
+        } 
+        Console.WriteLine(); 
+  
+        // usign Sort() method to 
+        // sort the given array 
+        Array.Sort(topic); 
+  
+        // Displaying Elements of 
+        // array after sort 
+        Console.WriteLine("Topic of C# after reverse:"); 
+        Console.WriteLine(); 
+        foreach(string val in topic) 
+        { 
+            Console.WriteLine(val + " "); 
+        } 
+    } 
+} 
+} 
